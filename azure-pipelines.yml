@@ -12,10 +12,10 @@ variables:
   azureSubscription: 'a428f0db-e0bb-40d3-ac89-5941f92e2bec'
 
   # Web app name
-  webAppName: 'sbaidx'
+  webAppName: 'sbdx'
 
   # Environment name
-  environmentName: 'sbaidx'
+  environmentName: 'sbdx'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -57,7 +57,7 @@ stages:
         deploy:
           steps:
           - task: AzureRmWebAppDeployment@4
-            displayName: 'Azure App Service Deploy: sbaidx'
+            displayName: 'Azure App Service Deploy: sbdx'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
