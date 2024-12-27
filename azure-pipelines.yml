@@ -57,5 +57,5 @@ stages:
       inputs:  
         azureSubscription: $(azureSubscription)  
         appType: webApp  
-        appName: $(appName)   
+        appName: 'sbdx'   
         package: '$(System.DefaultWorkingDirectory)/**/webapi.zip'  
