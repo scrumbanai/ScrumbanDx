@@ -40,6 +40,7 @@ stages:
         replaceExistingArchive: true
 
     - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      artifact: WebApp
       
 - stage: Deploy
   displayName: Deploy stage
