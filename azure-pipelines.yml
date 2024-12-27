@@ -52,6 +52,8 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - download: current
+      artifact: drop
     - task: AzureWebApp@1  
       displayName: 'Deploy Azure Web App'  
       inputs:  
