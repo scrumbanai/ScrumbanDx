@@ -52,13 +52,10 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: AzureRmWebAppDeployment@4
-      inputs:
-        ConnectionType: 'AzureRM'
-        azureSubscription: 'Microsoft Azure Sponsorship (afdccb27-ea60-453e-826e-825022569fc4)'
-        appType: 'webAppLinux'
-        WebAppName: 'sbdx'
-        deployToSlotOrASE: true
-        ResourceGroupName: 'ScrumbanAiDT'
-        SlotName: 'production'
-        packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    - task: AzureWebApp@1  
+      displayName: 'Deploy Azure Web App'  
+      inputs:  
+        azureSubscription: $(azureSubscription)  
+        appType: webApp  
+        appName: $(appName)   
+        package: '$(System.DefaultWorkingDirectory)/**/webapi.zip'  
